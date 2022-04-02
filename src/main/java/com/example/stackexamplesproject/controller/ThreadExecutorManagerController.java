@@ -20,7 +20,7 @@ public class ThreadExecutorManagerController {
         };
 
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool(threadFactory);
-        while (countThreads-- > 0) {
+        for (int i = 0; i < countThreads; i++) {
             cachedThreadPool.submit(() -> {
                 try {
                     Thread.sleep(1000);
@@ -41,7 +41,7 @@ public class ThreadExecutorManagerController {
         };
 
         ExecutorService cachedThreadPool = Executors.newFixedThreadPool(10, threadFactory);
-        while (countThreads-- > 0) {
+        for (int i = 0; i < countThreads; i++) {
             cachedThreadPool.submit(() -> {
                 try {
                     Thread.sleep(1000);
